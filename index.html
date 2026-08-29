@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Yusuf Hakan Özcan</title>
+  <meta name="description" content="Yusuf Hakan Özcan — yazılım projeleri, kod örnekleri ve kullandığım teknolojiler.">
+
+  <!-- Sosyal medyada link paylaşıldığında görünecek kart bilgileri -->
+  <meta property="og:title" content="Yusuf Hakan Özcan">
+  <meta property="og:description" content="Yazılım projeleri, kod örnekleri ve kullandığım teknolojiler.">
+  <meta property="og:type" content="website">
+
+  <!--
+    JavaScript çalışıyorsa <html> etiketine "js" sınıfı eklenir.
+    Belirme animasyonları bu sınıfa bağlı; JS kapalıysa içerik hiç
+    gizlenmez, olduğu gibi görünür.
+    <head> içinde ve satır içi olması şart: aksi halde içerik önce
+    çizilir, sonra gizlenir ve göz kırpma efekti oluşur.
+  -->
+  <script>document.documentElement.classList.add('js');</script>
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Sekme ikonu: harici dosya gerektirmeyen, satır içi SVG -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%2334d399'/><text y='72' x='50' text-anchor='middle' font-size='58' font-family='sans-serif' font-weight='700' fill='%230b0f19'>Y</text></svg>">
+</head>
+
+<body>
+
+  <!-- ==========================================================
+       ÜST MENÜ
+       ========================================================== -->
+  <header class="ustmenu" id="ustmenu">
+    <nav class="ustmenu__ic" aria-label="Ana menü">
+      <a href="#hero" class="ustmenu__logo">YHÖ</a>
+
+      <button type="button" class="ustmenu__toggle" id="menu-toggle"
+              aria-expanded="false" aria-controls="menu-listesi" aria-label="Menüyü aç">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="ustmenu__liste" id="menu-listesi">
+        <li><a href="#projeler"   class="ustmenu__link">Projeler</a></li>
+        <li><a href="#kod"        class="ustmenu__link">Kod Vitrini</a></li>
+        <li><a href="#yetenekler" class="ustmenu__link">Yetenekler</a></li>
+        <li>
+          <a href="https://github.com/Yusuf-Hakan-OZCAN" class="ustmenu__link ustmenu__link--dis"
+             target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <main id="icerik">
+
+    <!-- ========================= HERO ========================= -->
+    <section class="hero" id="hero">
+      <div class="kapsayici">
+        <p class="hero__ust" data-goster>Merhaba, ben</p>
+
+        <h1 class="hero__isim" data-goster>Yusuf Hakan Özcan</h1>
+
+        <p class="hero__ozet" data-goster>
+          Algoritmaların nasıl davrandığını merak eden; yapay zeka, derin
+          öğrenme ve karar verme sistemleri üzerine projeler geliştiren bir
+          bilgisayar mühendisliği öğrencisiyim.
+        </p>
+
+        <div class="hero__aksiyon" data-goster>
+          <a href="#projeler" class="btn btn--dolu">Projelere bak</a>
+          <a href="https://github.com/Yusuf-Hakan-OZCAN" class="btn btn--bos"
+             target="_blank" rel="noopener noreferrer">GitHub profilim</a>
+        </div>
+      </div>
+
+      <div class="hero__kaydir" aria-hidden="true">
+        <span class="hero__kaydir-ok"></span>
+      </div>
+    </section>
+
+
+    <!-- ======================= PROJELER ======================= -->
+    <section class="bolum" id="projeler">
+      <div class="kapsayici">
+        <header class="bolum__baslik" data-goster>
+          <span class="bolum__no">01</span>
+          <h2>Projeler</h2>
+          <p class="bolum__aciklama">Üzerinde çalıştığım işler.</p>
+        </header>
+
+        <div class="projeler">
+
+          <!-- Bitirme projesi. Repo private olduğu için kaynak kod
+               bağlantısı yok; yerine durum rozeti gösteriliyor. -->
+          <article class="proje" data-goster>
+            <a class="proje__gorsel" href="assets/deepfake-akis.png"
+               target="_blank" rel="noopener noreferrer">
+              <img src="assets/deepfake-akis.png"
+                   alt="Veri ön işlemeden model seçimine uzanan çalışma akış şeması"
+                   loading="lazy" width="900" height="593">
+              <span class="proje__buyut">Tam boyutta aç ↗</span>
+            </a>
+            <div class="proje__govde">
+              <div class="proje__ust">
+                <span class="proje__no">01</span>
+                <h3 class="proje__ad">Derin Öğrenme ile Deepfake Tespiti</h3>
+              </div>
+              <p class="proje__aciklama">
+                Bitirme projem. Dokuz mimariyi — Xception, ResNet50,
+                EfficientNet-B4, VGG16, MesoNet, MobileNetV3 gibi evrişimli
+                ağları, ViT ve DFDT gibi transformer'ları ve hibrit M2TR'yi —
+                aynı veri kümeleri üzerinde karşılaştırıyor. Sınıf
+                dengesizliğinin doğruluk metriğini nasıl yanılttığını
+                inceleyip sınıf ağırlıkları ve öğrenme oranı planlaması gibi
+                müdahalelerle azınlık sınıf duyarlılığını iyileştiriyor.
+              </p>
+              <div class="proje__alt">
+                <ul class="etiketler">
+                  <li>Python</li>
+                  <li>PyTorch</li>
+                  <li>Derin Öğrenme</li>
+                  <li>ViT</li>
+                </ul>
+                <span class="proje__durum">Devam ediyor</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="proje" data-goster>
+            <a class="proje__gorsel" href="assets/smart-agent.png"
+               target="_blank" rel="noopener noreferrer">
+              <img src="assets/smart-agent.png"
+                   alt="Dört ajan tipinin performansını karşılaştıran grafikler"
+                   loading="lazy" width="900" height="667">
+              <span class="proje__buyut">Tam boyutta aç ↗</span>
+            </a>
+            <div class="proje__govde">
+              <div class="proje__ust">
+                <span class="proje__no">02</span>
+                <h3 class="proje__ad">Vacuum World — Akıllı Ajan Simülasyonu</h3>
+              </div>
+              <p class="proje__aciklama">
+                Dört ajan mimarisinin aynı ortamdaki performansını ölçüyor:
+                yalnızca anlık duruma bakan Reflex, ziyaret geçmişi tutan
+                Model-based, Manhattan mesafesiyle en yakın hedefe giden
+                Goal-based ve kirlilik ile mesafeyi tartan Utility-based.
+              </p>
+              <div class="proje__alt">
+                <ul class="etiketler">
+                  <li>Python</li>
+                  <li>Yapay Zeka</li>
+                  <li>matplotlib</li>
+                </ul>
+                <a class="proje__link"
+                   href="https://github.com/Yusuf-Hakan-OZCAN/Smart-Agent-Simulation"
+                   target="_blank" rel="noopener noreferrer">Kaynak kod ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="proje" data-goster>
+            <a class="proje__gorsel" href="assets/tictactoe.png"
+               target="_blank" rel="noopener noreferrer">
+              <img src="assets/tictactoe.png"
+                   alt="Minimax ve Alfa-Beta budamanın düğüm sayısı karşılaştırması"
+                   loading="lazy" width="1000" height="500">
+              <span class="proje__buyut">Tam boyutta aç ↗</span>
+            </a>
+            <div class="proje__govde">
+              <div class="proje__ust">
+                <span class="proje__no">03</span>
+                <h3 class="proje__ad">Tic-Tac-Toe: Alpha-Beta vs Minimax</h3>
+              </div>
+              <p class="proje__aciklama">
+                Saf Minimax tüm oyun ağacını tararken, Alfa-Beta budamanın
+                gereksiz dalları eleyerek nasıl hızlandığını ölçüyor. İki
+                algoritmanın genişlettiği düğüm sayısı sayılıp deneysel olarak
+                karşılaştırılıyor.
+              </p>
+              <div class="proje__alt">
+                <ul class="etiketler">
+                  <li>Python</li>
+                  <li>Algoritma</li>
+                  <li>Oyun Ağacı</li>
+                </ul>
+                <a class="proje__link"
+                   href="https://github.com/Yusuf-Hakan-OZCAN/Tic-Tac-Toe-AlphaBeta-vs-Minimax"
+                   target="_blank" rel="noopener noreferrer">Kaynak kod ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="proje" data-goster>
+            <a class="proje__gorsel" href="assets/turing-plaka.png"
+               target="_blank" rel="noopener noreferrer">
+              <img src="assets/turing-plaka.png"
+                   alt="Plaka tanıyıcı Turing makinesinin durum diyagramı"
+                   loading="lazy" width="900" height="420">
+              <span class="proje__buyut">Tam boyutta aç ↗</span>
+            </a>
+            <div class="proje__govde">
+              <div class="proje__ust">
+                <span class="proje__no">04</span>
+                <h3 class="proje__ad">Turing Makinesi — Plaka Formatı Tanıyıcı</h3>
+              </div>
+              <p class="proje__aciklama">
+                Tek bantlı deterministik bir Turing makinesi simülatörü.
+                <code>NN LL NNN</code> plaka formatına uyan dizeleri dokuz
+                durumlu bir geçiş fonksiyonuyla adım adım kabul ya da
+                reddediyor.
+              </p>
+              <div class="proje__alt">
+                <ul class="etiketler">
+                  <li>Python</li>
+                  <li>Otomata Teorisi</li>
+                </ul>
+                <a class="proje__link"
+                   href="https://github.com/Yusuf-Hakan-OZCAN/Turing-Makinesi-ile-Arac-Plaka-Format-Taniyici"
+                   target="_blank" rel="noopener noreferrer">Kaynak kod ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="proje" data-goster>
+            <a class="proje__gorsel" href="assets/turing-binary.png"
+               target="_blank" rel="noopener noreferrer">
+              <img src="assets/turing-binary.png"
+                   alt="İkili çarpma yapan Turing makinesinin durum diyagramı"
+                   loading="lazy" width="900" height="500">
+              <span class="proje__buyut">Tam boyutta aç ↗</span>
+            </a>
+            <div class="proje__govde">
+              <div class="proje__ust">
+                <span class="proje__no">05</span>
+                <h3 class="proje__ad">Turing Makinesi — İkili Çarpma</h3>
+              </div>
+              <p class="proje__aciklama">
+                İki ikili sayının çarpımını, bilgisayar mimarisinde de
+                kullanılan kaydır-ve-topla yöntemiyle hesaplıyor. İşlenen
+                bitler bant üzerinde işaretlenerek her bitin yalnızca bir kez
+                kullanılması garanti ediliyor.
+              </p>
+              <div class="proje__alt">
+                <ul class="etiketler">
+                  <li>Python</li>
+                  <li>Otomata Teorisi</li>
+                </ul>
+                <a class="proje__link"
+                   href="https://github.com/Yusuf-Hakan-OZCAN/Turing-Makinesi-ile-Binary-Carpma-Hesaplayici"
+                   target="_blank" rel="noopener noreferrer">Kaynak kod ↗</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ====================== KOD VİTRİNİ ====================== -->
+    <section class="bolum bolum--alt" id="kod">
+      <div class="kapsayici">
+        <header class="bolum__baslik" data-goster>
+          <span class="bolum__no">02</span>
+          <h2>Kod Vitrini</h2>
+          <p class="bolum__aciklama">
+            Yazdığım kodlardan öne çıkan parçalar.
+          </p>
+        </header>
+
+        <div class="vitrin">
+
+          <article class="vitrin__oge" data-goster>
+            <div class="vitrin__anlatim">
+              <h3>Alfa-Beta budama</h3>
+              <p>
+                Minimax'ın oyun ağacındaki her dalı taraması gerekmez. Bir
+                dalın sonucu, o ana kadar bulunmuş en iyi seçeneği zaten
+                geçemeyecekse aramayı orada kesmek doğru cevabı değiştirmez —
+                sadece işi kısaltır. Aşağıdaki iki <code>break</code> tam
+                olarak bunu yapıyor ve bu yüzden algoritma aynı hamleyi çok
+                daha az düğüm genişleterek buluyor.
+              </p>
+            </div>
+
+            <div class="kodkutu">
+              <div class="kodkutu__ust">
+                <span class="kodkutu__nokta"></span>
+                <span class="kodkutu__nokta"></span>
+                <span class="kodkutu__nokta"></span>
+                <span class="kodkutu__ad">alphabeta.py</span>
+              </div>
+<pre class="kodkutu__kod"><code>def alphabeta(board, depth, alpha, beta, maximizing):
+    global node_count
+    node_count += 1
+
+    if depth == 0 or is_terminal(board):
+        return evaluate(board), None
+
+    best_move = None
+
+    if maximizing:
+        value = float('-inf')
+        for move in get_possible_moves(board):
+            child  = make_move(board, move, "X")
+            result = alphabeta(child, depth - 1, alpha, beta, False)[0]
+            if result &gt; value:
+                value = result
+                best_move = move
+            if value &gt;= beta:
+                break              # Beta kesme
+            alpha = max(alpha, value)
+        return value, best_move
+</code></pre>
+            </div>
+          </article>
+
+          <article class="vitrin__oge vitrin__oge--ters" data-goster>
+            <div class="vitrin__anlatim">
+              <h3>Turing makinesinin geçiş fonksiyonu</h3>
+              <p>
+                Bir Turing makinesinin tüm davranışı <code>δ: Q × Σ → Q</code>
+                geçiş fonksiyonunda saklıdır. Burada her durum yalnızca
+                beklediği karakter sınıfını kabul ediyor, aksi halde doğrudan
+                red durumuna düşüyor. Uzunluk için ayrı bir kontrol yok:
+                yedi karakterden kısa girdi kabul durumuna hiç varamıyor,
+                uzun girdi ise orada fazladan sembol görüyor.
+              </p>
+            </div>
+
+            <div class="kodkutu">
+              <div class="kodkutu__ust">
+                <span class="kodkutu__nokta"></span>
+                <span class="kodkutu__nokta"></span>
+                <span class="kodkutu__nokta"></span>
+                <span class="kodkutu__ad">tm_plaka.py</span>
+              </div>
+<pre class="kodkutu__kod"><code>def gecis(durum: str, sembol: str) -&gt; str:
+    """
+    Geçiş fonksiyonu δ: Q x Σ -&gt; Q.
+    Her durum, sadece beklediği sembol sınıfını kabul eder;
+    aksi halde qR (red durumu).
+    """
+    # q0, q1: rakam bekler
+    if durum == "q0":
+        return "q1" if sembol in RAKAMLAR else "qR"
+    if durum == "q1":
+        return "q2" if sembol in RAKAMLAR else "qR"
+
+    # q2, q3: büyük harf bekler
+    if durum == "q2":
+        return "q3" if sembol in BUYUK_HARFLER else "qR"
+    if durum == "q3":
+        return "q4" if sembol in BUYUK_HARFLER else "qR"
+</code></pre>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ====================== YETENEKLER ====================== -->
+    <section class="bolum" id="yetenekler">
+      <div class="kapsayici">
+        <header class="bolum__baslik" data-goster>
+          <span class="bolum__no">03</span>
+          <h2>Yetenekler</h2>
+          <p class="bolum__aciklama">Kullandığım diller, araçlar ve teknolojiler.</p>
+        </header>
+
+        <div class="yetenek-gruplari">
+
+          <div class="yetenek-grup" data-goster>
+            <h3 class="yetenek-grup__ad">Diller</h3>
+            <ul class="rozetler">
+              <li>Python</li>
+              <li>Java</li>
+              <li>C</li>
+              <li>C++</li>
+              <li>C#</li>
+              <li>JavaScript</li>
+            </ul>
+          </div>
+
+          <div class="yetenek-grup" data-goster>
+            <h3 class="yetenek-grup__ad">Kütüphaneler</h3>
+            <ul class="rozetler">
+              <li>PyTorch</li>
+              <li>timm</li>
+              <li>albumentations</li>
+              <li>NumPy</li>
+              <li>matplotlib</li>
+            </ul>
+          </div>
+
+          <div class="yetenek-grup" data-goster>
+            <h3 class="yetenek-grup__ad">Konular</h3>
+            <ul class="rozetler">
+              <li>Yapay Zeka</li>
+              <li>Derin Öğrenme</li>
+              <li>Bilgisayarlı Görü</li>
+              <li>Sayısal Sinyal İşleme</li>
+              <li>Otomata Teorisi</li>
+            </ul>
+          </div>
+
+          <div class="yetenek-grup" data-goster>
+            <h3 class="yetenek-grup__ad">Yöntemler</h3>
+            <ul class="rozetler">
+              <li>Transfer Öğrenme</li>
+              <li>Model Değerlendirme</li>
+              <li>Veri Artırma</li>
+              <li>Algoritma Analizi</li>
+            </ul>
+          </div>
+
+          <div class="yetenek-grup" data-goster>
+            <h3 class="yetenek-grup__ad">Araçlar</h3>
+            <ul class="rozetler">
+              <li>Git</li>
+              <li>LaTeX</li>
+              <li>VS Code</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================== KAPANIŞ ========================
+         Soru bilinçli olarak burada: ziyaretçi bu noktaya geldiğinde
+         projeleri ve kodu görmüş oluyor, espri de bir iddiayı
+         desteklemiş oluyor. Üst menüye bağlantısı yok — aşağı inen
+         keşfetsin.
+
+         "Hayır" butonu imleç yaklaşınca kaçar; js/kapanis.js yönetir.
+         Kaçış bu bölümün sınırları içinde kalır, sayfanın tamamına
+         yayılmaz.
+         ========================================================== -->
+    <section class="bolum kapanis" id="kapanis">
+      <div class="kapsayici">
+        <header class="bolum__baslik" data-goster>
+          <span class="bolum__no">04</span>
+          <h2>Son bir soru</h2>
+        </header>
+
+        <div class="kapanis__kart" id="kapanis-kart" data-goster>
+
+          <!-- Soru ve butonlar. "Evet"e basılınca tamamı gizlenir,
+               yerini aşağıdaki uğurlama alır. -->
+          <div id="kapanis-soru-alan">
+            <p class="kapanis__soru">Beni işe almak ister misiniz?</p>
+
+            <div class="kapanis__butonlar" id="kapanis-butonlar">
+              <button type="button" class="kapanis__btn kapanis__btn--evet"
+                      id="btn-evet">
+                Evet
+              </button>
+
+              <!--
+                tabindex="-1": klavyeyle sekilemez. Odaklanınca da kaçsaydı
+                klavye kullanan ziyaretçi burada sıkışırdı; bu şekilde Tab
+                doğrudan "Evet"e gider, espri fare/dokunmatikte bozulmaz.
+                aria-hidden: ekran okuyucular da bu şakaya takılmasın.
+              -->
+              <button type="button" class="kapanis__btn kapanis__btn--hayir"
+                      id="btn-hayir" tabindex="-1" aria-hidden="true">
+                Hayır
+              </button>
+            </div>
+          </div>
+
+          <!-- Uğurlama. "Evet"e basılana kadar gizli; hidden özniteliği
+               JS ile kalkar. -->
+          <div class="kapanis__cevap" id="kapanis-cevap" hidden>
+            <p class="kapanis__tesekkur">Teşekkür ederim.</p>
+            <p class="kapanis__ugurlama">
+              Zaman ayırıp buraya kadar geldiğiniz için teşekkürler.
+              Geri kalan her şey GitHub'da.
+            </p>
+            <a href="https://github.com/Yusuf-Hakan-OZCAN" class="btn btn--dolu"
+               target="_blank" rel="noopener noreferrer">GitHub profilime git ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ========================= ALT BİLGİ ========================= -->
+  <footer class="altbilgi">
+    <div class="kapsayici altbilgi__ic">
+      <p class="altbilgi__isim">Yusuf Hakan Özcan</p>
+      <a href="https://github.com/Yusuf-Hakan-OZCAN" class="altbilgi__link"
+         target="_blank" rel="noopener noreferrer">github.com/Yusuf-Hakan-OZCAN ↗</a>
+    </div>
+  </footer>
+
+
+  <script src="js/kapanis.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

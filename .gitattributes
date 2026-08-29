@@ -1,0 +1,11 @@
+# Satır sonlarını normalleştir.
+# Windows'ta çalışırken dosyalar CRLF olur ama depoya LF olarak yazılır.
+# Bu olmazsa, başka bir makinede açılan dosya "tamamen değişmiş" gibi
+# görünür ve diff'ler okunamaz hale gelir.
+* text=auto eol=lf
+
+# İkili dosyalar dokunulmadan saklansın
+*.png binary
+*.jpg binary
+*.gif binary
+*.pdf binary
