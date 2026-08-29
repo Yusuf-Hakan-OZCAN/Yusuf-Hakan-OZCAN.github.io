@@ -1,7 +1,12 @@
 # Yusuf-Hakan-OZCAN.github.io
 
+### 👉 Siteyi görüntüle: **[yusuf-hakan-ozcan.github.io](https://yusuf-hakan-ozcan.github.io/)**
+
 Kişisel tanıtım sitem. Saf HTML, CSS ve JavaScript — derleme adımı,
 paket yöneticisi veya harici bağımlılık yok.
+
+Bu depo sitenin **kaynak kodunu** barındırır. Sayfayı görmek için
+yukarıdaki bağlantıyı kullan; dosyaları indirmene gerek yok.
 
 ## Önizleme
 
