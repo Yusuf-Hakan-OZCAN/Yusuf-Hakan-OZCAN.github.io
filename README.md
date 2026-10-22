@@ -26,7 +26,8 @@ Sonra tarayıcıda `http://localhost:8000` adresine git.
     Hero          Ad ve tek cümlelik tanıtım
     01 Projeler   Altı proje, geniş şeritler halinde
     02 Kod        Öne çıkan iki kod parçası
-    03 Yetenekler Diller, kütüphaneler, konular, yöntemler, araçlar
+    03 Yetenekler Diller, kütüphaneler ve çatılar, konular, yöntemler,
+                  araçlar, liderlik
     04 Kapanış    "Beni işe almak ister misiniz?"
     Alt bilgi     GitHub bağlantısı
 
