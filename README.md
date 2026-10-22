@@ -24,7 +24,7 @@ Sonra tarayıcıda `http://localhost:8000` adresine git.
 ## Sayfa akışı
 
     Hero          Ad ve tek cümlelik tanıtım
-    01 Projeler   Beş proje, geniş şeritler halinde
+    01 Projeler   Altı proje, geniş şeritler halinde
     02 Kod        Öne çıkan iki kod parçası
     03 Yetenekler Diller, kütüphaneler, konular, yöntemler, araçlar
     04 Kapanış    "Beni işe almak ister misiniz?"
@@ -34,22 +34,31 @@ Kapanış bölümündeki "Hayır" butonu imleç yaklaşınca kaçar. Bu bölüm
 bilerek en sonda: soru, ziyaretçi projeleri ve kodu gördükten sonra
 soruluyor. Üst menüde bağlantısı yok, aşağı inen keşfediyor.
 
+"Evet"e basılınca iletişim bağlantıları (GitHub, LinkedIn, e-posta)
+görünür. LinkedIn ve e-posta adresleri `js/kapanis.js` başındaki
+`LINKEDIN_ADRESI` ve `EPOSTA_PARCALARI` ayarlarından gelir; boş
+bırakılan kanal hiç gösterilmez. E-posta, adres toplayan botlara
+karşı HTML'e açıkça yazılmaz.
+
 ## Dosya düzeni
 
     index.html        Tek sayfa, bölümler halinde
     css/style.css     Renk değişkenleri ve tüm stiller
-    js/kapanis.js     Kapanış bölümü, kaçan "Hayır" butonu
+    js/kapanis.js     Kapanış bölümü, kaçan "Hayır" butonu, iletişim
     js/main.js        Menü, kaydırma, belirme animasyonları
     assets/           Proje görselleri
     .nojekyll         GitHub Pages dosyaları olduğu gibi sunsun
 
 ## Görseller
 
-`assets/` içindeki beş PNG proje şeritlerinde kullanılıyor. Hepsi
-kırpılmadan, doğal oranıyla gösteriliyor ve tıklanınca tam boyutta
-açılıyor. Yeni bir görsel eklerken:
+`assets/` içindeki görseller proje şeritlerinde kullanılıyor ve
+tıklanınca tam boyutta açılıyor. Diyagramlar (PNG) beyaz panelde,
+kırpılmadan gösteriliyor. Fotoğraflar (JPEG, `proje__gorsel--foto`)
+paneli kenardan kenara doldurur; yükseklik sınırını aşarsa üstten
+ve alttan biraz kırpılır. Yeni bir görsel eklerken:
 
 - Genişliği 900–1000 piksel yeterli; daha büyüğü gereksiz yük.
+- Fotoğrafı PNG değil JPEG olarak kaydet; boyut kat kat küçülür.
 - `<img>` etiketindeki `width` ve `height` değerleri dosyanın gerçek
   boyutuyla birebir aynı olmalı. Yanlışsa sayfa yüklenirken içerik
   zıplar.

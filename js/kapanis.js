@@ -50,6 +50,20 @@
     'Bir daha düşünün', 'Olmaz', 'Vazgeçin', 'Yakalayamazsınız'
   ];
 
+  /*
+    İletişim: "Evet"ten sonra gösterilen kanallar. Boş bırakılan
+    kanalın satırı sayfada hiç görünmez.
+
+    E-posta adresi HTML'e açıkça yazılmıyor; burada iki parça halinde
+    duruyor ve yalnızca "Evet"e basılınca birleştirilip sayfaya
+    ekleniyor. Sayfa kaynağını tarayıp adres toplayan botlara karşı
+    basit bir önlem.
+  */
+  // Adresteki "ö" yüzde kodlamasıyla (%C3%B6) yazıldı; her tarayıcıda
+  // ve kopyalanınca aynı adrese gitsin diye.
+  var LINKEDIN_ADRESI  = 'https://www.linkedin.com/in/yusuf-hakan-%C3%B6zcan-781809254';
+  var EPOSTA_PARCALARI = ['ozcanyusufhakan', 'gmail.com'];
+
   /* ---------- Durum ---------- */
   /*
     konum: butonun BÖLÜM İÇİNDEKİ mantıksal yeri { sol, ust }.
@@ -297,6 +311,27 @@
   }
 
   /* ------------------------------------------------------------
+     İletişim satırlarını ayarlardan doldurur. Satır HTML'de yoksa
+     ya da ayarı boşsa dokunulmaz, gizli kalır.
+     ------------------------------------------------------------ */
+  function iletisimiDoldur() {
+    var linkedin = document.getElementById('iletisim-linkedin');
+    if (linkedin && LINKEDIN_ADRESI) {
+      linkedin.querySelector('a').href = LINKEDIN_ADRESI;
+      linkedin.hidden = false;
+    }
+
+    var eposta = document.getElementById('iletisim-eposta');
+    if (eposta && EPOSTA_PARCALARI[0] && EPOSTA_PARCALARI[1]) {
+      var adres = EPOSTA_PARCALARI[0] + '@' + EPOSTA_PARCALARI[1];
+      var link  = eposta.querySelector('a');
+      link.href = 'mailto:' + adres;
+      link.textContent = adres;
+      eposta.hidden = false;
+    }
+  }
+
+  /* ------------------------------------------------------------
      "Evet" cevabı
      ------------------------------------------------------------ */
   function evetCevabi() {
@@ -310,6 +345,7 @@
     if (btnHayir.parentNode) btnHayir.remove();
 
     // Sorunun tamamı gider, yerine uğurlama gelir.
+    iletisimiDoldur();
     soruAlan.hidden = true;
     cevap.hidden = false;
   }

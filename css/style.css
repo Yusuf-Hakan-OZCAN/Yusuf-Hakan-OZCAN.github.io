@@ -284,6 +284,37 @@ a:hover { color: var(--vurgu-koyu); }
   margin-bottom: 6px;
 }
 
+/* Uğurlamadaki iletişim bağlantıları */
+.iletisim {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* E-posta adresi uzun; kendi satırında dursun */
+.iletisim__eposta { flex-basis: 100%; }
+
+.iletisim__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 11px 22px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  color: var(--kapi-metin);
+  font-size: 0.93rem;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+  transition: border-color var(--gecis), color var(--gecis),
+              transform var(--gecis);
+}
+.iletisim__link:hover {
+  border-color: var(--evet);
+  color: var(--evet-koyu);
+  transform: translateY(-2px);
+}
+
 
 /* ------------------------------------------------------------
    5. ÜST MENÜ
@@ -532,6 +563,21 @@ a:hover { color: var(--vurgu-koyu); }
   margin: 0 auto;
 }
 
+/*
+  Fotoğraflı panel. Beyaz zemin ve iç boşluk diyagramlar içindi;
+  bir fotoğrafın etrafında çerçeve gibi duruyor. Fotoğraf paneli
+  kenardan kenara doldurur. Burada kırpma kabul edilebilir: üstteki
+  gökyüzü ve alttaki su biraz kesilse de konu ortada kalıyor.
+*/
+.proje__gorsel--foto {
+  padding: 0;
+  background: var(--zemin-yuzey2);
+}
+.proje__gorsel--foto img {
+  width: 100%;
+  object-fit: cover;
+}
+
 /* Görselin tam boyutta açılabildiğini belli eden ipucu */
 .proje__buyut {
   position: absolute;
@@ -584,12 +630,54 @@ a:hover { color: var(--vurgu-koyu); }
   letter-spacing: -0.01em;
 }
 
+/* Projenin yürütüldüğü kurum (ör. şirket projeleri) */
+.proje__kurum {
+  margin: -4px 0 12px;
+  color: var(--metin-silik);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.11em;
+}
+
 .proje__aciklama {
   color: var(--metin-soluk);
   font-size: 0.96rem;
   /* Uzun satırlar okumayı zorlaştırır; ölçü sınırlanıyor */
   max-width: 74ch;
   margin-bottom: 20px;
+}
+
+/*
+  Birden fazla rol üstlenilen projelerde her rol ayrı kutuda.
+  Geniş ekranda yan yana, dar ekranda alt alta dizilir.
+*/
+.roller {
+  display: grid;
+  /* min(): çok dar ekranda 280px kutuyu taşırmasın */
+  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.rol {
+  padding: 18px 20px;
+  background: var(--zemin-yuzey2);
+  border: 1px solid var(--kenar);
+  border-left: 3px solid var(--vurgu);
+  border-radius: 10px;
+}
+
+.rol__ad {
+  margin: 0 0 8px;
+  font-size: 0.98rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.rol__aciklama {
+  color: var(--metin-soluk);
+  font-size: 0.9rem;
 }
 
 .proje__alt {
@@ -847,6 +935,7 @@ html.js [data-goster].gorunur {
      kısılır ki tek proje ekranın tamamını kaplamasın. */
   .projeler { gap: 34px; }
   .proje__gorsel { padding: 12px; }
+  .proje__gorsel--foto { padding: 0; }
   .proje__gorsel img { max-height: 260px; }
   .proje__buyut { right: 20px; bottom: 20px; font-size: 0.74rem; }
   .proje__govde { padding: 20px 20px 22px; }
