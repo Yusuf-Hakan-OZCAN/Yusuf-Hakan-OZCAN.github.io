@@ -751,13 +751,22 @@ a:hover { color: var(--vurgu-koyu); }
    ------------------------------------------------------------ */
 .vitrin { display: grid; gap: 76px; }
 
+/*
+  Geniş sütun kodun. En uzun satırın (alphabeta.py, ~570px) kutuya
+  yatay kaydırma olmadan sığması için bu oran seçildi.
+*/
 .vitrin__oge {
   display: grid;
-  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  grid-template-columns: minmax(0, 0.75fr) minmax(0, 1.25fr);
   gap: 40px;
   align-items: center;
 }
-/* İkinci öge ters dizilsin — sayfa monoton görünmesin */
+/*
+  İkinci öge ters dizilsin — sayfa monoton görünmesin.
+  Sütun oranları da ters çevriliyor: yalnızca order değişseydi kod
+  dar sütuna düşer ve satırları kutuya sığmazdı.
+*/
+.vitrin__oge--ters { grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr); }
 .vitrin__oge--ters .vitrin__anlatim { order: 2; }
 
 .vitrin__anlatim h3 { font-size: 1.25rem; margin-bottom: 12px; }
@@ -881,8 +890,13 @@ html.js [data-goster].gorunur {
 /* ------------------------------------------------------------
    13. DUYARLI AYARLAR
    ------------------------------------------------------------ */
-@media (max-width: 860px) {
-  .vitrin__oge {
+/*
+  Bu genişliğin altında kod sütunu en uzun satıra yetmiyor; anlatım
+  ve kod alt alta dizilir, kod kutusu tam genişliği kullanır.
+*/
+@media (max-width: 1024px) {
+  .vitrin__oge,
+  .vitrin__oge--ters {
     grid-template-columns: 1fr;
     gap: 26px;
   }
